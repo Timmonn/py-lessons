@@ -16,3 +16,7 @@ err = new_log[70:]
 date_time =new_log[:15]
 print(f'The PC {pc_name} receive message from service {service_name} what says {msg} because {err} at {date_time}')
 
+str1 = ['
+
+
+
