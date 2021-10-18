@@ -17,7 +17,7 @@ sz = (fmt - fmu)
 print(sz)
 pcnt = '{0:.1f}'.format(100-fmu*100/fmt)
 print(pcnt)
-if int(float(sz)) < 10_737_418_240 and int(float(pcnt) < 5):
+if int(float(sz)) < 10_737_418_240 or int(float(pcnt) < 5):
     print(f'In drive {drv_num} critical low free space')
 elif int(float(sz)) > 10_737_418_240 and int(float(sz)) < 32_212_254_725 or int(float(pcnt)) < 10:
     print(f'In drive {drv_num} low free space')
