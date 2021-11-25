@@ -21,14 +21,27 @@ for lst in s2:
         'message': " ".join(lst[5:])
     }
     list_log_dict.append(log_dict)
-#print(list(i['time'] for i in list_log_dict)) # РЕШЕНИЕ !!!!
-#print(list_log_dict)
+print(list(i['time'] for i in list_log_dict)) # РЕШЕНИЕ
 dates = {}
 times = {}
-for t in list_log_dict:
-    dates['date']=t['time'][:7]
-    times['time']=t['time'][7:16]
-    #print(dates,times)
-    t['date']=dates.values()
-    t['time']=times.values()
-    print(t)
+l = []
+for elem in list_log_dict:
+    dates['date']=elem['time'][:6]
+    times['time']=elem['time'][7:16]
+    elem.update(dates)
+    elem.update(times)
+    l.append(elem)
+print(list(item.get("time") for item in l))
+print(list(msg.get("message") for msg in l if msg['pc_name']=='PC0078'))
+
+list_log_dict_new = range(100, 110)
+s3 = (a.split() for a in log_list)
+for lst in s3:
+    log_dict = {
+        'time': " ".join(lst[:3]),
+        'pc_name': "".join(lst[3]),
+        'service_name': "".join(lst[4][:-1]),
+        'message': " ".join(lst[5:])
+    }
+
+print(list_log_dict_new)
