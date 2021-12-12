@@ -33,15 +33,6 @@ for elem in list_log_dict:
     l.append(elem)
 print(list(item.get("time") for item in l))
 print(list(msg.get("message") for msg in l if msg['pc_name']=='PC0078'))
-
-list_log_dict_new = range(100, 110)
-s3 = (a.split() for a in log_list)
-for lst in s3:
-    log_dict = {
-        'time': " ".join(lst[:3]),
-        'pc_name': "".join(lst[3]),
-        'service_name': "".join(lst[4][:-1]),
-        'message': " ".join(lst[5:])
-    }
-
-print(list_log_dict_new)
+list_log_dict_new = [100,101,102,103,104,105,106,107,108,109,110] #Тут конечно нужен генератор, пока по простому
+list_dict_new = dict(zip(list_log_dict_new, log_list))
+print(list_dict_new[104])
