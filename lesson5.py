@@ -21,7 +21,7 @@ for lst in s2:
         'message': " ".join(lst[5:])
     }
     list_log_dict.append(log_dict)
-#print(list(i['time'] for i in list_log_dict)) # РЕШЕНИЕ !!!!
+print(list(i['time'] for i in list_log_dict)) # РЕШЕНИЕ !!!!
 #print(list_log_dict)
 dates = {}
 times = {}
@@ -31,4 +31,4 @@ for t in list_log_dict:
     #print(dates,times)
     t['date']=dates.values()
     t['time']=times.values()
-    print(t)
+   # print(t)
